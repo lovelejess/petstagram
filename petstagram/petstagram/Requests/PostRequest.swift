@@ -1,5 +1,5 @@
 //
-//  POSTRequest.swift
+//  PostRequest.swift
 //  petstagram
 //
 //  Created by Jess Lê on 12/21/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct POSTRequest: APIRequest {
+struct PostRequest: APIRequest {
     typealias Response = [Post]
     var method: HTTPMethod
     var path: String

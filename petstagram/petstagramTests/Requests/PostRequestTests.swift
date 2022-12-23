@@ -1,5 +1,5 @@
 //
-//  POSTRequestTests.swift
+//  PostRequestTests.swift
 //  petstagramTests
 //
 //  Created by Jess Lê on 12/22/22.
@@ -8,11 +8,11 @@
 import XCTest
 @testable import petstagram
 
-class POSTRequestTests: XCTestCase {
+class PostRequestTests: XCTestCase {
     func test_handle_validData_returns_decodedPost() {
         let data = JsonData.validResponse.data(using: .utf8)!
 
-        let request = POSTRequest(method: .POST, path: "")
+        let request = PostRequest(method: .POST, path: "")
         var actual = [Post]()
 
         do {
@@ -27,7 +27,7 @@ class POSTRequestTests: XCTestCase {
     func test_handle_invalidData_throwsError() {
         let data = JsonData.invalidResponse.data(using: .utf8)!
 
-        let request = POSTRequest(method: .POST, path: "")
+        let request = PostRequest(method: .POST, path: "")
         var actual = [Post]()
 
         do {

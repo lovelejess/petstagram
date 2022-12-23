@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var publisher: AnyCancellable = {
         let client = APIClient()
-        let request = POSTRequest(method: .POST, path: "")
+        let request = PostRequest(method: .POST, path: "")
         return client.publisherForRequest(request)
             .sink(receiveCompletion: { result in
                 print(result)
