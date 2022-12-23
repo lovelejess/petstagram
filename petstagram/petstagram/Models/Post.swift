@@ -12,3 +12,11 @@ struct Post: Codable {
     var createdAt: Date
     var photoUrl: URL
 }
+
+extension Post: Equatable {
+    static func ==(lhs: Post, rhs: Post) -> Bool {
+        return lhs.caption == rhs.caption &&
+        lhs.createdAt == rhs.createdAt &&
+        lhs.photoUrl == rhs.photoUrl
+    }
+}
