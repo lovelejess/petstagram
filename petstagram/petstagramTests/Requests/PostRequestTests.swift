@@ -28,14 +28,9 @@ class PostRequestTests: XCTestCase {
         let data = JsonData.invalidResponse.data(using: .utf8)!
 
         let request = PostRequest(method: .POST, path: "")
-        var actual = [Post]()
 
-        do {
-            actual = try request.handle(response: data)
-        } catch let error {
+        XCTAssertThrowsError(try request.handle(response: data)) { error in
             XCTAssertEqual(error.localizedDescription, "The data couldn’t be read because it isn’t in the correct format.")
         }
-
-        XCTAssertEqual(actual, [])
     }
 }
